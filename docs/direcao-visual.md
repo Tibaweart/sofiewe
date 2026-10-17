@@ -26,8 +26,11 @@ Referência oficial: [`referencias/my-loom-v1.png`](referencias/my-loom-v1.png) 
 | Atmosfera | escolhida manualmente | **segue o horário real** (manhã, tarde, final de tarde, noite), com opção de travar uma |
 | Composição | personagem no centro | personagem **deslocado para um lado** e área livre à esquerda, onde ficam os ícones do Windows/Mac |
 
+## Clima
+Chuva escorrendo na janela, céu nublado ou limpo, e relâmpagos à noite, conforme o tempo real da região.
+
 ## Animações ambientes (baratas, sempre ligadas)
-Luminária balançando · cachorro respirando e mexendo a orelha · poeira nos raios de luz · folhas das plantas ·
+Luminária balançando · pet (se tiver) respirando e mexendo a orelha · poeira nos raios de luz · folhas das plantas ·
 brilho pulsante do neon da RTX · telas dos monitores com conteúdo leve · luzes da cidade acendendo à noite ·
 câmera com micro-movimento automático (sem seguir o mouse).
 
@@ -49,7 +52,7 @@ O quarto **ainda não existe em 3D**: só esta imagem de referência. Primeiro p
 no Blender seguindo a referência, já pensado em slots para itens e em lightmaps por atmosfera.
 
 O **personagem também não existe**. Proposta em duas etapas:
-1. **MVP:** um personagem base (no estilo da referência: moletom The Loom, calça cargo, tênis), modelado,
+1. **MVP:** **dois personagens base, masculino e feminino** (no estilo da referência: moletom The Loom, calça cargo, tênis), modelados
    com esqueleto padrão de humanoide e 3–5 animações idle em loop (respirar, olhar ao redor, celular, caneca, alongar).
 2. **Visitas:** o quarto tem **4 posições de personagem** (dono + até 3 visitantes: poltrona, banqueta, encostado na mesa, tapete) e animações em grupo, para quando um amigo ou namorado(a) visita.
 3. **Depois:** personalização por Loomer sobre o mesmo esqueleto (rosto, cabelo, pele, roupas, e os itens
@@ -60,7 +63,7 @@ Os **itens colecionáveis também não existem**. Padrão proposto para todo ite
 |---|---|
 | Arquivo | `.glb` com texturas KTX2/Basis (compressão de GPU, a mesma ideia do DXT do WE) |
 | Orçamento | até ~15 mil triângulos e texturas de 1024 px por item (LOD menor para o modo leve) |
-| Slot | `prateleira`, `mesa`, `parede`, `chão`, `vestível` (no personagem) |
+| Slot | `prateleira`, `mesa`, `parede`, `chão`, `vestível` (no personagem), `pet` (animal com animações próprias) |
 | Origem | pivô na base do objeto, escala real em metros, frente apontando para +Z |
 | Dados | `nome`, `raridade` (Comum, Raro, Épico, Lendário…), `tiragem` (#12/100), `animação` opcional (ex.: neon pulsando) |
 

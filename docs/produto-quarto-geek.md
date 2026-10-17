@@ -99,6 +99,10 @@
 | Avisos de convite | **Notificação no PC** (app My Loom) **e no site** (sininho) |
 | Presença | O personagem **não muda** com o dono online/offline: sempre as mesmas animações idle |
 | Som | **Wallpaper mudo** (sem sons ambientes) |
+| Janela | **Cidade genérica** igual para todos |
+| Clima | **Segue o tempo real** (chuva, nublado, sol). Localização **aproximada pelo IP** no próprio Worker do Cloudflare (`request.cf`), sem pedir permissão de GPS. Previsão via serviço gratuito (ex.: Open-Meteo), com cache por região |
+| Personagem base | **Dois: masculino e feminino**, a pessoa escolhe no site |
+| Pets | **Colecionáveis** (cachorro, gato etc.), como itens com slot `pet` |
 | Privacidade | Quarto **privado = só o dono vê**. Público = qualquer um com o @handle/ID |
 | Visitas | **Amigos e namorado(a) podem visitar** o quarto: os personagens dos visitantes **aparecem no quarto junto com o dono (até 4 pessoas: dono + 3)**, com animações de convivência (sentar juntos, conversar, mexer no setup). A visita é **somente por convite**, e **vale nos dois sentidos**: qualquer um dos dois pode convidar o outro para o seu quarto ou receber convite (quem convida é o anfitrião, quem aceita aparece no quarto dele). Durante a visita, **o quarto do anfitrião com todos os personagens aparece no wallpaper de todos**. A visita **continua até o visitante sair ou o dono retirá-lo**, mesmo com alguém offline (o personagem fica no quarto). Entrada, saída e remoção são sincronizadas em tempo real pelo mesmo canal das atualizações |
 | Edição × exibição | **Toda personalização acontece no site do The Loom** (quarto, personagem, itens, atmosfera, privacidade). O wallpaper **só exibe** e não tem editor. Ajustes locais limitados a qualidade, FPS e regras de pausa |
