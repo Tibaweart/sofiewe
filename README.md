@@ -1,5 +1,8 @@
 # sofiewe
 
+> **Este conteúdo foi movido para o monorepo [`Tibaweart/theloom`](https://github.com/Tibaweart/theloom)**
+> (branch `importar/api`: `apps/api`, `docs/myloom`, `docs/pesquisa`). Continue o trabalho lá.
+
 **My Loom**: fundo de tela animado com o **quarto geek** de cada usuário (conta Loom ID), construído do zero
 a partir do estudo do Wallpaper Engine e de 9 projetos open source.
 
