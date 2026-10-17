@@ -44,7 +44,10 @@ Calcular tudo isso em tempo real custaria GPU de jogo. Recomendação: **3D em t
 **Plano B, mais leve:** renderizar o quarto em camadas no Blender e animar por parallax e loops de vídeo, no estilo do lwp.
 Fica com cara de render, mas perde a liberdade de trocar itens e mover a câmera.
 
+## Status
+O quarto **ainda não existe em 3D**: só esta imagem de referência. Primeiro passo de arte: modelar o quarto base
+no Blender seguindo a referência, já pensado em slots para itens e em lightmaps por atmosfera.
+
 ## Perguntas
-1. Já existe o modelo 3D desse quarto (Blender/Unreal) ou só a imagem?
-2. O personagem é o avatar de cada Loomer (cada um tem o seu) ou um personagem fixo?
-3. Os itens colecionáveis já têm modelos 3D?
+1. O personagem é o avatar de cada Loomer (cada um tem o seu) ou um personagem fixo?
+2. Os itens colecionáveis já têm modelos 3D?
