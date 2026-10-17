@@ -8,14 +8,14 @@ Levantamento feito em 2026-10-17 na conta Cloudflare (somente leitura).
 | Site | Worker `theloom` (Cloudflare) | theloom.com.br |
 | Sala de Controle | Worker `theloom-sc` + D1 `theloom-sc` | sc.theloom.com.br |
 | **Contas (The Loom ID)** | D1 `theloom-id` | tabelas `accounts`, `sessions`, `login_attempts` |
-| Arquivos (R2) | — | **R2 não está ativado** na conta. Precisa ativar para guardar modelos 3D |
+| Arquivos (R2) | — | **R2 não está ativado** na conta. **Autorizado ativar** quando chegar a hora (o dono ativa no painel) |
 
 ### Tabela `accounts` (campos relevantes)
 | Campo | Uso no wallpaper |
 |---|---|
 | `id` (TEXT) | chave interna, não exposta |
 | `loom_number` (INTEGER, único) | **ID público** do Loomer (`#000001`) |
-| `nick` | **@handle** (❓ confirmar) |
+| `nick` | **não é o @handle** (confirmado). O @handle ainda precisa de um campo próprio (ver abaixo) |
 | `display_name` | nome exibido |
 | `founder_number`, `founder_since` | selo "Founder" |
 | `status` | `ativa` / `bloqueada` (conta bloqueada = quarto indisponível) |
@@ -27,7 +27,11 @@ então o wallpaper usa `app = 'wallpaper'` e pode ser revogado sozinho, sem derr
 ## O que falta criar (proposta)
 Tudo na mesma plataforma (Cloudflare), para não espalhar infraestrutura.
 
-### Banco: novas tabelas (no D1 `theloom-id` ou num D1 `theloom-rooms` novo)
+### @handle
+Ainda não existe campo para ele. Proposta: coluna `handle` em `accounts` (única, sem diferenciar maiúsculas,
+3–20 caracteres `a-z 0-9 _ .`), já que é identidade da conta e não do quarto.
+
+### Banco: novas tabelas num D1 **separado `theloom-rooms`** (decidido)
 ```
 rooms        (account_id PK, visibility 'public'|'private', atmosphere, version, updated_at)
 room_items   (account_id, slot, item_id, transform_json)
@@ -56,7 +60,7 @@ e custa quase nada com o app parado.
 ### Arquivos 3D
 **R2** (precisa ativar) + cache da CDN. Modelos `.glb` endereçados por hash, então o app só baixa o que mudou.
 
-## Perguntas
-1. `nick` é o @handle?
-2. As novas tabelas vão no `theloom-id` ou num banco separado de quartos? (Recomendado: separado, `theloom-rooms`.)
-3. Pode ativar o R2 na conta Cloudflare? (O plano grátis inclui 10 GB.)
+## Decidido
+- `nick` não é o @handle. O @handle ganha campo próprio.
+- Quartos num banco separado (`theloom-rooms`).
+- R2 pode ser ativado.
