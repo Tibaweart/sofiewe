@@ -81,6 +81,12 @@
 | Identidade | **ID** = número do cadastro no universo Loom. **@handle** = apelido/abreviação do ID. O app aceita qualquer um dos dois |
 | Acesso | Quarto **público**: basta o @handle ou o ID, sem login. Quarto **privado** (o dono escolhe): o app pede login só nesse caso |
 | Login (quarto privado) | Fluxo *device code*: o app mostra um código curto, a pessoa aprova no site/app do The Loom, e o token fica guardado no cofre do sistema (Windows Credential Manager / macOS Keychain), nunca em arquivo |
+| Personagem | **Base única no MVP**, personalização por Loomer depois |
+| Itens | **Próprios/genéricos** (sem marcas reais) no lançamento |
+| Arte 3D | Responsável ainda não definido |
+| Backend | Site existe (Cloudflare Workers + D1 `theloom-id`), **sem API** ainda. Plano em `integracao-theloom.md` |
+| Monetização | **App grátis** |
+| Prazo | **Sem prazo fixo** |
 | Privacidade | Quarto **privado = só o dono vê**. Público = qualquer um com o @handle/ID |
 | Visitas | **Amigos e namorado(a) podem visitar** o quarto: o personagem do visitante **aparece no quarto junto com o dono (2 pessoas)**, com animações de convivência (sentar juntos, conversar, mexer no setup). A visita é **somente por convite**, e **vale nos dois sentidos**: qualquer um dos dois pode convidar o outro para o seu quarto ou receber convite (quem convida é o anfitrião, quem aceita aparece no quarto dele). Durante a visita, **o quarto do anfitrião com os 2 personagens aparece no wallpaper dos dois**. A visita **continua até o visitante sair ou o dono retirá-lo**, mesmo com alguém offline (o personagem fica no quarto). Entrada, saída e remoção são sincronizadas em tempo real pelo mesmo canal das atualizações |
 | Edição × exibição | **Toda personalização acontece no site do The Loom** (quarto, personagem, itens, atmosfera, privacidade). O wallpaper **só exibe** e não tem editor. Ajustes locais limitados a qualidade, FPS e regras de pausa |
@@ -90,6 +96,4 @@
 | Estilo | **3D** (Three.js), com modo "leve" para PCs fracos (menos sombras/efeitos, FPS menor) |
 
 ## Perguntas em aberto
-1. A API do universo Loom já existe? Precisamos de algo como `GET /resolve/@handle → id` e `GET /rooms/{id}` (manifesto + assets 3D).
-2. Personagem: base única no MVP e personalização por Loomer depois?
-3. Itens com marcas reais (Red Bull, NVIDIA, Nike): já há parceria/licença?
+1. API: ver perguntas em `integracao-theloom.md`.

@@ -67,6 +67,7 @@ Os **itens colecionáveis também não existem**. Padrão proposto para todo ite
 **Atenção a marcas reais:** Red Bull, NVIDIA/GeForce e Nike são marcas registradas. Usar o nome ou o
 visual delas em itens colecionáveis exige **parceria ou licença**. Até lá, usar itens genéricos ou da própria The Loom.
 
-## Perguntas
-1. Confirma o plano do personagem: base única no MVP e personalização por Loomer depois?
-2. Já existe alguma conversa de parceria com essas marcas, ou começamos com itens genéricos/próprios?
+## Decidido
+- Personagem: base única primeiro, personalização depois.
+- Itens: próprios/genéricos no lançamento (sem marcas reais).
+- Responsável pela arte 3D: a definir.
