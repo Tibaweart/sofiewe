@@ -1,11 +1,11 @@
 # Produto: "Quarto Geek" como fundo de tela
 
-> Rascunho a partir das análises em [`../analysis/`](../analysis/). Pontos marcados com **(?)**
-> dependem de respostas do time.
+> Rascunho a partir das análises em [`../analysis/`](../analysis/). Decisões confirmadas pelo time
+> em 2026-10-17 estão na seção "Decisões".
 
 ## A ideia
-1. A pessoa baixa o app (Windows primeiro).
-2. Digita o **código da conta Loom ID** **(?)**.
+1. A pessoa baixa o app (**Windows e macOS**).
+2. Digita o **@handle** ou o **ID** do personagem/conta no universo Loom.
 3. O app baixa o **quarto geek** dela e o mostra **ao vivo atrás dos ícones** da área de trabalho.
 4. Quando ela muda o quarto na conta, o fundo de tela atualiza sozinho.
 
@@ -25,7 +25,7 @@
 │  API window.sofie.* (propriedades, áudio, play/pause) │
 └───────────────────────────────────────────────────────┘
                     ▲ HTTPS
-            API Loom: GET /rooms/{loomId} → manifesto + assets
+            API Loom: @handle→ID, GET /rooms/{id} → manifesto
 ```
 
 ### Por que essas escolhas (ligadas às análises)
@@ -43,7 +43,8 @@
 ```json
 {
   "format": "sofie.room/1",
-  "loomId": "ABC123",
+  "loomId": 123456,
+  "handle": "@fulano",
   "version": 42,
   "theme": { "ambient": "#1b1036", "time": "night" },
   "camera": { "mode": "isometric", "parallax": 0.04 },
@@ -68,15 +69,21 @@
 ## Roadmap
 | Fase | Entrega |
 |---|---|
-| 0 | Protótipo Windows: uma página web local atrás dos ícones (2 caminhos WorkerW) + pausa básica |
-| 1 | Login com Loom ID + download e cache do manifesto + quarto 2.5D |
-| 2 | Quarto 3D (Three.js), áudio reativo, música tocando, interação com o mouse |
-| 3 | macOS. Linux (layer-shell) depois |
+| 0 | Protótipo Windows + macOS: uma página web local atrás dos ícones (2 caminhos WorkerW) + pausa básica |
+| 1 | Entrada por @handle/ID + download e cache do manifesto + quarto 3D básico |
+| 2 | Quarto 3D completo: luzes, áudio reativo, música tocando, interação com o mouse |
+| 3 | Linux (layer-shell), se houver demanda |
 | 4 | Editor do quarto na conta Loom, itens colecionáveis |
 
-## Perguntas em aberto (?)
-1. **O que é a Loom ID?** Uma plataforma de vocês? O quarto já existe (web/3D) ou vamos criá-lo?
-2. O código da conta é **público** (qualquer um com o código vê o quarto) ou precisa de login?
-   Se for privado, o fluxo recomendado é o *device code* (digitar o código num site e aprovar).
-3. Plataformas no lançamento: só Windows ou Windows + macOS?
-4. Estilo do quarto: pixel art 2.5D, isométrico low-poly ou 3D realista? (muda bastante o custo de GPU)
+## Decisões (2026-10-17)
+| Tema | Decisão |
+|---|---|
+| Identidade | **ID** = número do cadastro no universo Loom. **@handle** = apelido/abreviação do ID. O app aceita qualquer um dos dois |
+| Acesso | O wallpaper só precisa do @handle ou do ID: **consulta pública, sem login** |
+| Plataformas | **Windows e macOS** no lançamento |
+| Estilo | **3D** (Three.js), com modo "leve" para PCs fracos (menos sombras/efeitos, FPS menor) |
+
+## Perguntas em aberto
+1. A API do universo Loom já existe? Precisamos de algo como `GET /resolve/@handle → id` e `GET /rooms/{id}` (manifesto + assets 3D).
+2. O quarto 3D já existe em algum lugar (site, jogo) ou vamos criar os modelos e o editor?
+3. O dono pode deixar o quarto privado? (Se sim, o app precisa de login só nesses casos.)
