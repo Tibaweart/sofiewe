@@ -29,7 +29,7 @@ Lido no código publicado da Sala de Controle (`theloom-sc`, `worker/identidade.
 - **O token fica num cookie `HttpOnly`** (`__Host-sc_sessao`, preso ao próprio host). Consequências:
   o JavaScript do site **não consegue ler o token**, e o navegador **não envia** esse cookie para `api.theloom.com.br`.
 
-**Como ligar (recomendado):** o Worker do site faz de ponte. Rota same-origin `/{site}/api/myloom/*` →
+**Como ligar (recomendado):** o Worker do site faz de ponte. Rota no próprio domínio do site, `/api/myloom/*` →
 **service binding** para o Worker `myloom-api`, lendo o cookie da sessão e repassando como `Authorization: Bearer <token>`.
 Assim o token continua invisível ao JavaScript, não precisa de CORS e a API não muda.
 ```toml
