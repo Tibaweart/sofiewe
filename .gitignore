@@ -1,0 +1,15 @@
+# Clean-room: nunca versionar binários, pacotes ou exports de terceiros
+*.exe
+*.dll
+*.pdb
+*.pkg
+*.tex
+*.mdl
+*.gzf
+*.rep/
+*.gpr
+*.i64
+*.idb
+/third_party_src/
+/workshop/
+*.bndb

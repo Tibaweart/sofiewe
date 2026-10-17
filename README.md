@@ -1,0 +1,14 @@
+# sofiewe
+
+Fundo de tela animado com o **quarto geek** de cada usuário (conta Loom ID), construído do zero
+a partir do estudo do Wallpaper Engine e de 9 projetos open source.
+
+| Onde | O quê |
+|---|---|
+| [`analysis/`](analysis/) | Dissecação dos 10 programas: o que fazem e **por quê** (clean room) |
+| [`analysis/10-sintese.md`](analysis/10-sintese.md) | O que levamos de cada um → nossas decisões |
+| [`docs/produto-quarto-geek.md`](docs/produto-quarto-geek.md) | Visão do produto, arquitetura e roadmap |
+| [`docs/setup-ghidra.md`](docs/setup-ghidra.md) | Fase 2: análise do binário do WE no seu PC |
+| [`.claude/skills/wallpaper-re/`](.claude/skills/wallpaper-re/SKILL.md) | Skill do Claude Code com o roteiro de engenharia reversa |
+
+**Regra do repositório:** nenhum código, binário ou asset de terceiros entra aqui. Só as nossas notas e o nosso código.
