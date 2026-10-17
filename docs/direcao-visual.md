@@ -39,7 +39,7 @@ Calcular tudo isso em tempo real custaria GPU de jogo. Recomendação: **3D em t
    neon e efeitos leves (bloom, profundidade de campo barata). É o mesmo princípio do WE: pré-compilar tudo o que dá.
 3. **Uma variante de lightmap por atmosfera** (tarde, final de tarde, noite), com transição suave entre elas.
 4. Itens colecionáveis são modelos `.glb` plugáveis em **"slots" do cenário** (prateleira, mesa, parede, chão), vindos do manifesto da conta.
-5. O personagem é um avatar `.glb` com esqueleto e animações idle. ❓ Já existe um sistema de avatar no The Loom?
+5. O personagem é um avatar `.glb` com esqueleto e animações idle. **Ainda não existe** (ver Status).
 
 **Plano B, mais leve:** renderizar o quarto em camadas no Blender e animar por parallax e loops de vídeo, no estilo do lwp.
 Fica com cara de render, mas perde a liberdade de trocar itens e mover a câmera.
@@ -48,6 +48,12 @@ Fica com cara de render, mas perde a liberdade de trocar itens e mover a câmera
 O quarto **ainda não existe em 3D**: só esta imagem de referência. Primeiro passo de arte: modelar o quarto base
 no Blender seguindo a referência, já pensado em slots para itens e em lightmaps por atmosfera.
 
+O **personagem também não existe**. Proposta em duas etapas:
+1. **MVP:** um personagem base (no estilo da referência: moletom The Loom, calça cargo, tênis), modelado,
+   com esqueleto padrão de humanoide e 3–5 animações idle em loop (respirar, olhar ao redor, celular, caneca, alongar).
+2. **Depois:** personalização por Loomer sobre o mesmo esqueleto (rosto, cabelo, pele, roupas, e os itens
+   vestíveis da coleção, como o capacete e o tênis). Assim todas as animações servem para todos.
+
 ## Perguntas
-1. O personagem é o avatar de cada Loomer (cada um tem o seu) ou um personagem fixo?
+1. Confirma o plano do personagem: base única no MVP e personalização por Loomer depois?
 2. Os itens colecionáveis já têm modelos 3D?
