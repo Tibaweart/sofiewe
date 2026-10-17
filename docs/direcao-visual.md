@@ -62,7 +62,7 @@ Os **itens colecionáveis também não existem**. Padrão proposto para todo ite
 | Campo | Padrão |
 |---|---|
 | Arquivo | `.glb` com texturas KTX2/Basis (compressão de GPU, a mesma ideia do DXT do WE) |
-| Orçamento | até ~15 mil triângulos e texturas de 1024 px por item (LOD menor para o modo leve) |
+| Orçamento | até ~15 mil triângulos e texturas de 1024 px por item, com LOD menor para o modo leve. **Alvo de desempenho: vídeo integrado de notebook** (ex.: Intel Iris Xe) a 30 FPS no modo leve |
 | Slot | `prateleira`, `mesa`, `parede`, `chão`, `vestível` (no personagem), `pet` (animal com animações próprias) |
 | Origem | pivô na base do objeto, escala real em metros, frente apontando para +Z |
 | Dados | `nome`, `raridade` (Comum, Raro, Épico, Lendário…), `tiragem` (#12/100), `animação` opcional (ex.: neon pulsando) |
