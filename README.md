@@ -1,6 +1,6 @@
 # sofiewe
 
-Fundo de tela animado com o **quarto geek** de cada usuário (conta Loom ID), construído do zero
+**My Loom**: fundo de tela animado com o **quarto geek** de cada usuário (conta Loom ID), construído do zero
 a partir do estudo do Wallpaper Engine e de 9 projetos open source.
 
 | Onde | O quê |

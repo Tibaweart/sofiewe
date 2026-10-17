@@ -90,6 +90,10 @@
 | Interação | **Sem interação com o mouse** no wallpaper: só visual (sem rótulos, sem clique). Não precisa de Raw Input |
 | Atmosfera | **Segue o horário real** (manhã, tarde, final de tarde, noite). No site dá para travar uma |
 | Monitores | **Quarto só no monitor principal**. Os outros ficam com o fundo normal do sistema |
+| Nome do app | **My Loom** |
+| Distribuição | **Download pelo site do The Loom** (sem lojas). Exige **assinatura de código**: Windows (Authenticode / Azure Trusted Signing) e macOS (Apple Developer ID + notarização). Sem isso, o SmartScreen e o Gatekeeper mostram alertas de "app não confiável". Atualizações automáticas pelo próprio app |
+| Inicialização | **Abre com o computador por padrão**, com opção de desligar |
+| Jogos / tela cheia | **A pessoa escolhe** nas configurações: Pausar (padrão) ou Parar e liberar memória |
 | Privacidade | Quarto **privado = só o dono vê**. Público = qualquer um com o @handle/ID |
 | Visitas | **Amigos e namorado(a) podem visitar** o quarto: o personagem do visitante **aparece no quarto junto com o dono (2 pessoas)**, com animações de convivência (sentar juntos, conversar, mexer no setup). A visita é **somente por convite**, e **vale nos dois sentidos**: qualquer um dos dois pode convidar o outro para o seu quarto ou receber convite (quem convida é o anfitrião, quem aceita aparece no quarto dele). Durante a visita, **o quarto do anfitrião com os 2 personagens aparece no wallpaper dos dois**. A visita **continua até o visitante sair ou o dono retirá-lo**, mesmo com alguém offline (o personagem fica no quarto). Entrada, saída e remoção são sincronizadas em tempo real pelo mesmo canal das atualizações |
 | Edição × exibição | **Toda personalização acontece no site do The Loom** (quarto, personagem, itens, atmosfera, privacidade). O wallpaper **só exibe** e não tem editor. Ajustes locais limitados a qualidade, FPS e regras de pausa |
