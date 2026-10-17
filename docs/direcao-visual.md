@@ -22,14 +22,14 @@ Referência oficial: [`referencias/my-loom-v1.png`](referencias/my-loom-v1.png) 
 |---|---|---|
 | Personagem | de costas, olhando o setup | **de frente para a câmera**, em pose idle (respirando, olhando ao redor, de vez em quando mexendo no celular ou na caneca) |
 | Interface | menu, barras, rótulos | **sem UI**: só o quarto (os ícones do desktop ficam por cima) |
-| Rótulos dos itens | sempre visíveis | escondidos. Aparecem ao passar o mouse sobre o item (fase 2, Raw Input) |
+| Rótulos dos itens | sempre visíveis | **não aparecem** (wallpaper só visual, sem interação) |
 | Atmosfera | escolhida manualmente | **segue o horário real** (manhã, tarde, final de tarde, noite), com opção de travar uma |
 | Composição | personagem no centro | personagem **deslocado para um lado** e área livre à esquerda, onde ficam os ícones do Windows/Mac |
 
 ## Animações ambientes (baratas, sempre ligadas)
 Luminária balançando · cachorro respirando e mexendo a orelha · poeira nos raios de luz · folhas das plantas ·
 brilho pulsante do neon da RTX · telas dos monitores com conteúdo leve · luzes da cidade acendendo à noite ·
-leve parallax da câmera com o mouse.
+câmera com micro-movimento automático (sem seguir o mouse).
 
 ## Como chegar nesse nível de qualidade sem pesar no PC
 A referência tem qualidade de render offline (iluminação global, sombras suaves, profundidade de campo).

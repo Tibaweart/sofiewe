@@ -28,7 +28,7 @@ então o wallpaper usa `app = 'wallpaper'` e pode ser revogado sozinho, sem derr
 Tudo na mesma plataforma (Cloudflare), para não espalhar infraestrutura.
 
 ### @handle
-Ainda não existe campo para ele. Proposta: coluna `handle` em `accounts` (única, sem diferenciar maiúsculas,
+Ainda não existe campo para ele. **A pessoa escolhe o próprio @handle** (estilo Instagram). Proposta: coluna `handle` em `accounts` (única, sem diferenciar maiúsculas,
 3–20 caracteres `a-z 0-9 _ .`), já que é identidade da conta e não do quarto.
 
 ### Banco: novas tabelas num D1 **separado `theloom-rooms`** (decidido)

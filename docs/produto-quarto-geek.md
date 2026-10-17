@@ -63,14 +63,13 @@
 - `sofie.onProperties(cb)`: mudanças feitas pelo usuário na UI.
 - `sofie.onNowPlaying(cb)`: música tocando no sistema.
 - `sofie.onPlayback(cb)`: pausado ou rodando (para a página parar animações e liberar CPU).
-- `sofie.onPointer(cb)`: mouse sobre a área de trabalho (fase 2).
 
 ## Roadmap
 | Fase | Entrega |
 |---|---|
 | 0 | Protótipo Windows + macOS: uma página web local atrás dos ícones (2 caminhos WorkerW) + pausa básica |
 | 1 | Entrada por @handle/ID + download e cache do manifesto + quarto 3D básico |
-| 2 | Quarto 3D completo: luzes, música tocando (opcional), interação com o mouse |
+| 2 | Quarto 3D completo: luzes por horário, música tocando (opcional), animações de visita |
 | 3 | Linux (layer-shell), se houver demanda |
 | 4 | Editor do quarto na conta Loom, itens colecionáveis |
 
@@ -87,6 +86,10 @@
 | Monetização | **App grátis** |
 | Prazo | **Sem prazo fixo** |
 | Áudio | **Sem reação à música** do PC (decidido). Sem captura de áudio, o que também reduz o consumo |
+| @handle | **Escolhido pela pessoa**, único (estilo Instagram) |
+| Interação | **Sem interação com o mouse** no wallpaper: só visual (sem rótulos, sem clique). Não precisa de Raw Input |
+| Atmosfera | **Segue o horário real** (manhã, tarde, final de tarde, noite). No site dá para travar uma |
+| Monitores | **Quarto só no monitor principal**. Os outros ficam com o fundo normal do sistema |
 | Privacidade | Quarto **privado = só o dono vê**. Público = qualquer um com o @handle/ID |
 | Visitas | **Amigos e namorado(a) podem visitar** o quarto: o personagem do visitante **aparece no quarto junto com o dono (2 pessoas)**, com animações de convivência (sentar juntos, conversar, mexer no setup). A visita é **somente por convite**, e **vale nos dois sentidos**: qualquer um dos dois pode convidar o outro para o seu quarto ou receber convite (quem convida é o anfitrião, quem aceita aparece no quarto dele). Durante a visita, **o quarto do anfitrião com os 2 personagens aparece no wallpaper dos dois**. A visita **continua até o visitante sair ou o dono retirá-lo**, mesmo com alguém offline (o personagem fica no quarto). Entrada, saída e remoção são sincronizadas em tempo real pelo mesmo canal das atualizações |
 | Edição × exibição | **Toda personalização acontece no site do The Loom** (quarto, personagem, itens, atmosfera, privacidade). O wallpaper **só exibe** e não tem editor. Ajustes locais limitados a qualidade, FPS e regras de pausa |
