@@ -54,6 +54,18 @@ O **personagem também não existe**. Proposta em duas etapas:
 2. **Depois:** personalização por Loomer sobre o mesmo esqueleto (rosto, cabelo, pele, roupas, e os itens
    vestíveis da coleção, como o capacete e o tênis). Assim todas as animações servem para todos.
 
+Os **itens colecionáveis também não existem**. Padrão proposto para todo item, para que qualquer artista produza e o app encaixe sozinho:
+| Campo | Padrão |
+|---|---|
+| Arquivo | `.glb` com texturas KTX2/Basis (compressão de GPU, a mesma ideia do DXT do WE) |
+| Orçamento | até ~15 mil triângulos e texturas de 1024 px por item (LOD menor para o modo leve) |
+| Slot | `prateleira`, `mesa`, `parede`, `chão`, `vestível` (no personagem) |
+| Origem | pivô na base do objeto, escala real em metros, frente apontando para +Z |
+| Dados | `nome`, `raridade` (Comum, Raro, Épico, Lendário…), `tiragem` (#12/100), `animação` opcional (ex.: neon pulsando) |
+
+**Atenção a marcas reais:** Red Bull, NVIDIA/GeForce e Nike são marcas registradas. Usar o nome ou o
+visual delas em itens colecionáveis exige **parceria ou licença**. Até lá, usar itens genéricos ou da própria The Loom.
+
 ## Perguntas
 1. Confirma o plano do personagem: base única no MVP e personalização por Loomer depois?
-2. Os itens colecionáveis já têm modelos 3D?
+2. Já existe alguma conversa de parceria com essas marcas, ou começamos com itens genéricos/próprios?

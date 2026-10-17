@@ -81,12 +81,12 @@
 | Identidade | **ID** = número do cadastro no universo Loom. **@handle** = apelido/abreviação do ID. O app aceita qualquer um dos dois |
 | Acesso | Quarto **público**: basta o @handle ou o ID, sem login. Quarto **privado** (o dono escolhe): o app pede login só nesse caso |
 | Login (quarto privado) | Fluxo *device code*: o app mostra um código curto, a pessoa aprova no site/app do The Loom, e o token fica guardado no cofre do sistema (Windows Credential Manager / macOS Keychain), nunca em arquivo |
-| Conteúdo 3D | Quarto e personagem **ainda não existem**: vamos modelar o quarto base com slots para itens e um personagem base com animações idle (ver `direcao-visual.md`) |
+| Conteúdo 3D | Quarto, personagem e itens colecionáveis **ainda não existem**: vamos modelar o quarto base com slots, um personagem base com animações idle e os primeiros itens seguindo um padrão único (ver `direcao-visual.md`) |
 | Plataformas | **Windows e macOS** no lançamento |
 | Estilo | **3D** (Three.js), com modo "leve" para PCs fracos (menos sombras/efeitos, FPS menor) |
 
 ## Perguntas em aberto
 1. A API do universo Loom já existe? Precisamos de algo como `GET /resolve/@handle → id` e `GET /rooms/{id}` (manifesto + assets 3D).
 2. Personagem: base única no MVP e personalização por Loomer depois?
-3. Os itens colecionáveis já têm modelos 3D?
+3. Itens com marcas reais (Red Bull, NVIDIA, Nike): já há parceria/licença?
 4. Quem pode ver um quarto privado: só o dono, ou amigos (Friends) também?
