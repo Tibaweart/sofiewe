@@ -107,6 +107,10 @@
 | Bateria | **Pausa por padrão** quando na bateria |
 | Idiomas | **Português, inglês e espanhol** |
 | Estilos de quarto | **Um loft** (o da referência) no lançamento. Novos estilos depois |
+| Site × wallpaper | **Mesmo motor 3D** na tela "My Loom" do site e no wallpaper: o que se vê no site é igual ao PC |
+| Obtenção de itens | **Por experiências** (eventos/experiências do The Loom) |
+| Editor do quarto | **Feito pelo Claude** no site theloom.com.br, junto com a API |
+| Primeira entrega | **API + banco** no Cloudflare (@handle, quartos, itens, convites, visitas, login do app) |
 | Privacidade | Quarto **privado = só o dono vê**. Público = qualquer um com o @handle/ID |
 | Visitas | **Amigos e namorado(a) podem visitar** o quarto: os personagens dos visitantes **aparecem no quarto junto com o dono (até 4 pessoas: dono + 3)**, com animações de convivência (sentar juntos, conversar, mexer no setup). A visita é **somente por convite**, e **vale nos dois sentidos**: qualquer um dos dois pode convidar o outro para o seu quarto ou receber convite (quem convida é o anfitrião, quem aceita aparece no quarto dele). Durante a visita, **o quarto do anfitrião com todos os personagens aparece no wallpaper de todos**. A visita **continua até o visitante sair ou o dono retirá-lo**, mesmo com alguém offline (o personagem fica no quarto). Entrada, saída e remoção são sincronizadas em tempo real pelo mesmo canal das atualizações |
 | Edição × exibição | **Toda personalização acontece no site do The Loom** (quarto, personagem, itens, atmosfera, privacidade). O wallpaper **só exibe** e não tem editor. Ajustes locais limitados a qualidade, FPS e regras de pausa |
