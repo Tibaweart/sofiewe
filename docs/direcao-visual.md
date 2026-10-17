@@ -51,7 +51,8 @@ no Blender seguindo a referência, já pensado em slots para itens e em lightmap
 O **personagem também não existe**. Proposta em duas etapas:
 1. **MVP:** um personagem base (no estilo da referência: moletom The Loom, calça cargo, tênis), modelado,
    com esqueleto padrão de humanoide e 3–5 animações idle em loop (respirar, olhar ao redor, celular, caneca, alongar).
-2. **Depois:** personalização por Loomer sobre o mesmo esqueleto (rosto, cabelo, pele, roupas, e os itens
+2. **Visitas:** o quarto tem uma **segunda posição de personagem** (poltrona, banqueta, encostado na mesa) e animações em dupla, para quando um amigo ou namorado(a) visita.
+3. **Depois:** personalização por Loomer sobre o mesmo esqueleto (rosto, cabelo, pele, roupas, e os itens
    vestíveis da coleção, como o capacete e o tênis). Assim todas as animações servem para todos.
 
 Os **itens colecionáveis também não existem**. Padrão proposto para todo item, para que qualquer artista produza e o app encaixe sozinho:

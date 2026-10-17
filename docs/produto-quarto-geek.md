@@ -81,6 +81,8 @@
 | Identidade | **ID** = número do cadastro no universo Loom. **@handle** = apelido/abreviação do ID. O app aceita qualquer um dos dois |
 | Acesso | Quarto **público**: basta o @handle ou o ID, sem login. Quarto **privado** (o dono escolhe): o app pede login só nesse caso |
 | Login (quarto privado) | Fluxo *device code*: o app mostra um código curto, a pessoa aprova no site/app do The Loom, e o token fica guardado no cofre do sistema (Windows Credential Manager / macOS Keychain), nunca em arquivo |
+| Privacidade | Quarto **privado = só o dono vê**. Público = qualquer um com o @handle/ID |
+| Visitas | **Amigos e namorado(a) podem visitar** o quarto: o personagem do visitante **aparece no quarto junto com o dono (2 pessoas)**, com animações de convivência (sentar juntos, conversar, mexer no setup). A visita é por convite ou permissão do dono, e a presença é sincronizada em tempo real pelo mesmo canal das atualizações |
 | Edição × exibição | **Toda personalização acontece no site do The Loom** (quarto, personagem, itens, atmosfera, privacidade). O wallpaper **só exibe** e não tem editor. Ajustes locais limitados a qualidade, FPS e regras de pausa |
 | Atualização | Ao salvar no site, o servidor **avisa o app em tempo real** (WebSocket/SSE leve, com checagem periódica de reserva). O app baixa **só o que mudou** (manifesto versionado + assets por hash), guarda em cache e aplica com transição suave. Offline: mostra a última versão salva |
 | Conteúdo 3D | Quarto, personagem e itens colecionáveis **ainda não existem**: vamos modelar o quarto base com slots, um personagem base com animações idle e os primeiros itens seguindo um padrão único (ver `direcao-visual.md`) |
@@ -91,4 +93,6 @@
 1. A API do universo Loom já existe? Precisamos de algo como `GET /resolve/@handle → id` e `GET /rooms/{id}` (manifesto + assets 3D).
 2. Personagem: base única no MVP e personalização por Loomer depois?
 3. Itens com marcas reais (Red Bull, NVIDIA, Nike): já há parceria/licença?
-4. Quem pode ver um quarto privado: só o dono, ou amigos (Friends) também?
+4. Visitas: o visitante entra por convite do dono, ou amigos/namorado(a) entram livremente?
+5. Durante a visita, o quarto com as 2 pessoas aparece no wallpaper **dos dois** ou só no do dono?
+6. A visita é "ao vivo" (só enquanto os dois estão online) ou o visitante pode "ficar" no quarto por um tempo?
