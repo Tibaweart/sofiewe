@@ -1,5 +1,8 @@
 # 00 — Wallpaper Engine (referência fechada)
 
+> **Mapa detalhado, um arquivo por subsistema: [`wallpaper-engine/`](wallpaper-engine/README.md).**
+> Esta página é o resumo.
+
 **Status do conhecimento:** ✅ confirmado por reimplementações/docs · 🟡 inferido · ❓ a investigar com Ghidra
 (roteiro em [`../docs/setup-ghidra.md`](../docs/setup-ghidra.md)).
 

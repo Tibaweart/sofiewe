@@ -16,7 +16,7 @@ basear o **nosso** produto (ver [`../docs/produto-quarto-geek.md`](../docs/produ
 
 | # | Programa | Plataforma | Linguagem | Licença | Nota |
 |---|---|---|---|---|---|
-| 00 | [Wallpaper Engine](00-wallpaper-engine.md) | Windows | C++ (fechado) | Proprietária | Referência; estudado via formatos, reimplementações e docs |
+| 00 | [Wallpaper Engine](00-wallpaper-engine.md) → **[mapa completo](wallpaper-engine/README.md)** | Windows | C++ (fechado) | Proprietária | Referência; mapeado via docs oficiais + reimplementações (sem o binário) |
 | 01 | [Lively Wallpaper](01-lively.md) | Windows | C# / .NET | GPL-3.0 | Melhor referência de **host Windows** |
 | 02 | [linux-wallpaperengine](02-linux-wallpaperengine.md) | Linux | C++ / OpenGL | GPL-3.0 | Melhor referência do **motor de cenas do WE** |
 | 03 | [wallpaper-scene-renderer (plugin KDE)](03-kde-scene-renderer.md) | Linux | C++ / Vulkan | GPL-2.0 | Segunda leitura do motor do WE, arquitetura de render moderna |
@@ -30,7 +30,8 @@ basear o **nosso** produto (ver [`../docs/produto-quarto-geek.md`](../docs/produ
 
 Commits estudados (2026-10-17): lively `25a0a5f`, linux-wallpaperengine `b016d7d`,
 wallpaper-scene-renderer `8dde7e7`, waywallen `027e2dd`, ScreenPlay `7d23cf0`,
-mpvpaper `fc5ed28`, Plash `79728c9`, lwp `5d94c82`, repkg `8005eb2`.
+mpvpaper `fc5ed28`, Plash `79728c9`, lwp `5d94c82`, repkg `8005eb2`,
+open-wallpaper-engine `d906a69` (GPL-2, sucessor do renderer KDE; usado no mapa do WE).
 
 ## Matriz: como cada um resolve os problemas centrais
 

@@ -6,6 +6,7 @@ a partir do estudo do Wallpaper Engine e de 9 projetos open source.
 | Onde | O quê |
 |---|---|
 | [`analysis/`](analysis/) | Dissecação dos 10 programas: o que fazem e **por quê** (clean room) |
+| [`analysis/wallpaper-engine/`](analysis/wallpaper-engine/README.md) | **Mapa completo do Wallpaper Engine** (processos, formatos, render, shaders, APIs, pausa) |
 | [`analysis/10-sintese.md`](analysis/10-sintese.md) | O que levamos de cada um → nossas decisões |
 | [`docs/produto-quarto-geek.md`](docs/produto-quarto-geek.md) | Visão do produto, arquitetura e roadmap |
 | [`docs/setup-ghidra.md`](docs/setup-ghidra.md) | Fase 2: análise do binário do WE no seu PC |
