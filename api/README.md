@@ -3,7 +3,8 @@
 API do wallpaper **My Loom** e do editor de quarto no site, como Cloudflare Worker.
 Quartos, itens, convites, visitas e login do app por código. Tempo real por Durable Objects.
 
-> **Status:** código e testes prontos. **Nada foi publicado** e nenhum banco de produção foi alterado.
+> **Status (2026-10-17):** bancos prontos em produção: `theloom-rooms` criado com as tabelas, e coluna `handle`
+> adicionada em `theloom-id.accounts`. **O Worker ainda não foi publicado** (falta a chave de API do Cloudflare).
 
 ## Rodar localmente
 ```bash
@@ -36,14 +37,11 @@ Regras garantidas no banco e cobertas por testes: quarto privado só para dono e
 itens só do dono e no tipo de slot certo; tiragem numerada (`#n/edição`) sem repetir número.
 
 ## Publicar (precisa da aprovação do dono, nesta ordem)
-1. **Criar o banco de quartos:** `npx wrangler d1 create theloom-rooms` e colar o `database_id` no `wrangler.toml`.
-2. **Tabelas:** `npx wrangler d1 migrations apply theloom-rooms --remote`.
-3. **@handle no banco do site** (`theloom-id`, compartilhado):
-   `npx wrangler d1 execute theloom-id --remote --file migrations/id/0001_handle.sql`.
-   Usar `execute` e não `migrations apply`, para não misturar com as migrações do próprio site.
-4. **Segredo:** `npx wrangler secret put ADMIN_TOKEN`.
-5. **Publicar:** `npx wrangler deploy` e apontar `api.theloom.com.br` para o Worker.
-6. **R2** (modelos 3D): ativar no painel quando os primeiros `.glb` existirem.
+1. ✅ Banco `theloom-rooms` criado e migração `0001_init.sql` aplicada (registrada em `d1_migrations`).
+2. ✅ `migrations/id/0001_handle.sql` aplicada em `theloom-id` (manual, fora do `d1_migrations` do site).
+3. **Segredo:** `npx wrangler secret put ADMIN_TOKEN`.
+4. **Publicar:** `npx wrangler deploy` e apontar `api.theloom.com.br` para o Worker.
+5. **R2** (modelos 3D): ativar no painel quando os primeiros `.glb` existirem.
 
 ## Premissas a confirmar com o código do site
 - O site guarda `sessions.token_hash` como **SHA-256 em hex** do token e `expires_at` em **ISO 8601 UTC**.

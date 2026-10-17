@@ -9,13 +9,11 @@ database_name = "theloom-id"
 database_id = "c9ebc467-fdff-41e1-b2d1-b07a2494f5cf"
 migrations_dir = "migrations/id"
 
-# Quartos, itens, convites e visitas. Banco ainda NÃO criado: rode
-#   npx wrangler d1 create theloom-rooms
-# e cole o database_id abaixo.
+# Quartos, itens, convites e visitas (criado em 2026-10-17, região ENAM, migração 0001 aplicada).
 [[d1_databases]]
 binding = "DB_ROOMS"
 database_name = "theloom-rooms"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "8f1e48b6-268a-43f5-9ccd-405b107d0892"
 migrations_dir = "migrations/rooms"
 
 # Canais de tempo real (um por quarto e um por conta), com WebSocket hibernável.
