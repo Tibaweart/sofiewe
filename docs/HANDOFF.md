@@ -22,12 +22,38 @@ npx wrangler deploy
 - Teste rápido: `curl https://api.theloom.com.br/health` deve responder `{"ok":true}`, e
   `curl https://api.theloom.com.br/v1/loomers/1` deve trazer o perfil #000001.
 
-## 2. Conferir a autenticação (crítico)
-A API valida sessões do site lendo `theloom-id.sessions` com `token_hash = SHA-256(token) em hex` (`api/src/auth.ts`).
-No código do site (Worker `theloom` / `theloom-sc`), confira **como o `token_hash` é gerado**:
-- Se for SHA-256 hex puro do token: nada a fazer.
-- Se for diferente (HMAC com segredo, base64, prefixo…): ajuste `sha256Hex` em `api/src/auth.ts` e `api/src/device.ts` para o mesmo esquema, rode `npm test` e publique de novo.
-- Confira também **em qual cookie/cabeçalho o site guarda o token**. O site deve mandar `Authorization: Bearer <token>` nas chamadas à API.
+## 2. Autenticação: confirmada, com um ajuste de integração
+Lido no código publicado da Sala de Controle (`theloom-sc`, `worker/identidade.ts`) em 2026-10-17:
+- O token da sessão é guardado como **SHA-256 em hex** (`sha256(token)`), igual à API. ✅ Nada a mudar em `api/src/auth.ts`.
+- Senhas: PBKDF2-SHA256 com 100 mil iterações. Sessões de 14 dias, `app = 'sc'`.
+- **O token fica num cookie `HttpOnly`** (`__Host-sc_sessao`, preso ao próprio host). Consequências:
+  o JavaScript do site **não consegue ler o token**, e o navegador **não envia** esse cookie para `api.theloom.com.br`.
+
+**Como ligar (recomendado):** o Worker do site faz de ponte. Rota same-origin `/{site}/api/myloom/*` →
+**service binding** para o Worker `myloom-api`, lendo o cookie da sessão e repassando como `Authorization: Bearer <token>`.
+Assim o token continua invisível ao JavaScript, não precisa de CORS e a API não muda.
+```toml
+# wrangler.toml do site
+[[services]]
+binding = "MYLOOM"
+service = "myloom-api"
+```
+```ts
+// no fetch do site, antes do handleApi:
+if (url.pathname.startsWith("/api/myloom/")) {
+  const token = readCookie(req);               // a mesma função de identidade.ts
+  const target = new URL(url.pathname.replace("/api/myloom", "") + url.search, "https://myloom-api");
+  const headers = new Headers(req.headers);
+  headers.delete("cookie");
+  if (token) headers.set("authorization", `Bearer ${token}`);
+  return env.MYLOOM.fetch(new Request(target, { method: req.method, headers, body: req.body }));
+}
+```
+WebSocket do sininho: passa pela mesma ponte (`/api/myloom/v1/me/live`). Repassar a requisição com o header
+`Upgrade` funciona com service binding.
+
+O **app desktop** continua falando direto com `api.theloom.com.br`, com o token próprio (`app = 'wallpaper'`)
+obtido pelo login por código.
 
 ## 3. No site theloom.com.br
 | Peça | O que fazer | Rotas da API |
@@ -36,10 +62,10 @@ No código do site (Worker `theloom` / `theloom-sc`), confira **como o `token_ha
 | **Escolher @handle** | No perfil/cadastro: campo com validação 3–20 `a-z 0-9 _ .` | `PUT /v1/me/handle {handle}` → 409 `handle_taken` / `handle_reserved` |
 | **Editor do quarto (My Loom)** | Público/privado, personagem masculino/feminino, travar atmosfera, itens nos slots | `GET /v1/rooms/{id}` · `PUT /v1/rooms/me {visibility, character_base, atmosphere_lock, items:[{slot,item_id,serial}]}` |
 | **Visitas** | Convidar por @handle/ID, lista de convites, aceitar/recusar/cancelar, sair/retirar | `POST /v1/invites {to}` · `GET /v1/invites` · `POST /v1/invites/{id}/accept\|decline\|cancel` · `POST /v1/visits/{id}/leave\|remove` |
-| **Sininho** | Ouvir convites em tempo real | WebSocket `wss://api.theloom.com.br/v1/me/live?access_token=<token>` |
+| **Sininho** | Ouvir convites em tempo real | WebSocket pela ponte: `/api/myloom/v1/me/live` |
 
 Slots do loft: `prateleira-1..4`, `mesa-1..2`, `parede-1..2`, `chao-1..2`, `vestivel-cabeca`, `vestivel-pes`, `pet` (`api/src/slots.ts`).
-O CORS já libera `https://theloom.com.br` e `https://www.theloom.com.br` (`ALLOWED_ORIGINS` no `wrangler.toml`).
+No site, chame as rotas pela ponte (`/api/myloom/v1/...`). O CORS da API fica só como alternativa.
 
 ## 4. Itens das experiências
 Criar item: `POST /v1/admin/items` · entregar exemplar numerado: `POST /v1/admin/grants {item_id, to}`, ambos com `Authorization: Bearer <ADMIN_TOKEN>`.
