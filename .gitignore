@@ -13,3 +13,6 @@
 /third_party_src/
 /workshop/
 *.bndb
+node_modules/
+.wrangler/
+.dev.vars

@@ -24,6 +24,9 @@ Levantamento feito em 2026-10-17 na conta Cloudflare (somente leitura).
 `token_hash`, `account_id`, **`app`**, `expires_at`, `revoked_at`. O login já separa sessões por app,
 então o wallpaper usa `app = 'wallpaper'` e pode ser revogado sozinho, sem derrubar o site.
 
+## Status
+A API proposta abaixo está **implementada e testada** em [`../api/`](../api/README.md), mas ainda **não foi publicada**.
+
 ## O que falta criar (proposta)
 Tudo na mesma plataforma (Cloudflare), para não espalhar infraestrutura.
 

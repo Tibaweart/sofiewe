@@ -1,0 +1,33 @@
+name = "myloom-api"
+main = "src/index.ts"
+compatibility_date = "2026-08-01"
+
+# Contas do The Loom (banco do site, compartilhado). Somente a migração do @handle é nossa.
+[[d1_databases]]
+binding = "DB_ID"
+database_name = "theloom-id"
+database_id = "c9ebc467-fdff-41e1-b2d1-b07a2494f5cf"
+migrations_dir = "migrations/id"
+
+# Quartos, itens, convites e visitas. Banco ainda NÃO criado: rode
+#   npx wrangler d1 create theloom-rooms
+# e cole o database_id abaixo.
+[[d1_databases]]
+binding = "DB_ROOMS"
+database_name = "theloom-rooms"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations/rooms"
+
+# Canais de tempo real (um por quarto e um por conta), com WebSocket hibernável.
+[durable_objects]
+bindings = [{ name = "CHANNEL", class_name = "Channel" }]
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Channel"]
+
+[vars]
+ALLOWED_ORIGINS = "https://theloom.com.br,https://www.theloom.com.br"
+VERIFICATION_URI = "https://theloom.com.br/ativar"
+
+# Segredos (wrangler secret put): ADMIN_TOKEN
