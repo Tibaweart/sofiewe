@@ -81,6 +81,8 @@
 | Identidade | **ID** = número do cadastro no universo Loom. **@handle** = apelido/abreviação do ID. O app aceita qualquer um dos dois |
 | Acesso | Quarto **público**: basta o @handle ou o ID, sem login. Quarto **privado** (o dono escolhe): o app pede login só nesse caso |
 | Login (quarto privado) | Fluxo *device code*: o app mostra um código curto, a pessoa aprova no site/app do The Loom, e o token fica guardado no cofre do sistema (Windows Credential Manager / macOS Keychain), nunca em arquivo |
+| Edição × exibição | **Toda personalização acontece no site do The Loom** (quarto, personagem, itens, atmosfera, privacidade). O wallpaper **só exibe** e não tem editor. Ajustes locais limitados a qualidade, FPS e regras de pausa |
+| Atualização | Ao salvar no site, o servidor **avisa o app em tempo real** (WebSocket/SSE leve, com checagem periódica de reserva). O app baixa **só o que mudou** (manifesto versionado + assets por hash), guarda em cache e aplica com transição suave. Offline: mostra a última versão salva |
 | Conteúdo 3D | Quarto, personagem e itens colecionáveis **ainda não existem**: vamos modelar o quarto base com slots, um personagem base com animações idle e os primeiros itens seguindo um padrão único (ver `direcao-visual.md`) |
 | Plataformas | **Windows e macOS** no lançamento |
 | Estilo | **3D** (Three.js), com modo "leve" para PCs fracos (menos sombras/efeitos, FPS menor) |
